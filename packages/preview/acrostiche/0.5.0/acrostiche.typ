@@ -59,7 +59,7 @@
 
 
       // The Definition is a string============
-      if type(defs) == string{ // If user defined only one version and forgot the trailing comma the type is string
+      if type(defs) == str{ // If user defined only one version and forgot the trailing comma the type is string
         if plural{panic("You requested the plural version of the acronym but it seems like you only provided the singular version in #init-acronyms(dict)")}
         else{defs} // All is good, we return the definition found as the singular version
       }
