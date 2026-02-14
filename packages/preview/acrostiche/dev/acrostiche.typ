@@ -18,10 +18,10 @@
   }
   // for plural add an s if they are not explicitly provided
   if "short-pl" not in definitions {
-    definitions.insert("short-pl", [#definitions.at("short")\s])
+    definitions.insert("short-pl", definitions.at("short") + "s")
   }
   if "long-pl" not in definitions {
-    definitions.insert("long-pl", [#definitions.at("long")\s])
+    definitions.insert("long-pl", definitions.at("long") + "s")
   }
 
   definitions
@@ -228,6 +228,8 @@
 #let acrpl(acronym) = acr(acronym, plural: true)
 /// Display capitalized version of an acronym
 #let acrcap(acronym) = acr(acronym, plural: false, cap: true)
+/// Display plural, capitalized version of an acronym
+#let acrplcap(acronym) = acr(acronym, plural: true, cap: true)
 
 // Intentionally display an acronym in its full form. Do not update state.
 
